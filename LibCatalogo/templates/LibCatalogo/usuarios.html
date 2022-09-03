@@ -1,12 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuarios</title>
-</head>
-<body>
-    ESTA ES LA PAGINA DE USUARIOS
-</body>
-</html>
+{% extends "LibCatalogo/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="fw-bolder">Bienvenido a la seccion Usuarios</h1>
+<p class="lead">Proyecto pre-final Coder-Python / Comision 31105 / grupo Fernando - Francisco</p>
+{% endblock %}
+
+{% block contenido1 %}
+<h2>Que vamos a encontar en la seccion Usuarios?</h2>
+<p class="lead">En esta seccion podras subscribirte y registrarte en la Lib!</p>
+<ul>
+    <li>Registrate para acceder a importantes beneficios!</li>
+    <li>Podes realizar busquedas por titulo/autores/genero</li>
+    <li>Todos los dias se agregan nuevos titulos!</li>
+    <li>Subscrite y recibi por mail todas las novedades de la semana</li>
+</ul>
+{% endblock %}
