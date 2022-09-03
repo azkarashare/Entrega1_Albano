@@ -18,4 +18,4 @@ def generos(request):
     return render(request, "LibCatalogo/generos.html")
 
 def usuario(request):
-    return render(request, "LibCatalogo/usuario.html")
+    return render(request, "LibCatalogo/usuarios.html")
