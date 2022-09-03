@@ -12,7 +12,7 @@ def libros(request):
     return render(request, "LibCatalogo/libros.html")
 
 def autores(request):
-    return render(request, "LibCatalogo/autore.html")
+    return render(request, "LibCatalogo/autores.html")
 
 def generos(request):
     return render(request, "LibCatalogo/generos.html")

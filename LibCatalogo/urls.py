@@ -17,9 +17,9 @@ from django.urls import path
 from LibCatalogo.views import autores, generos, inicio, libros, usuario
 
 urlpatterns = [
-    path('libros', libros),
-    path('autores', autores),
-    path('generos', generos),
+    path('libros', libros, name='libros'),
+    path('autores', autores, name='autores'),
+    path('generos', generos, name='generos'),
     path('usuario', usuario),
     path('inicio', inicio),
 ]
