@@ -38,7 +38,7 @@ def libros_f(request):
             idioma=nuevo_libro_data["idioma"]
             nuevo_libro=Libros(titulo=titulo, genero=genero, autor=autor, sumario=sumario, idioma=idioma)
             nuevo_libro.save()
-            return render(request, "LibCatalogo/inicio.html")       
+            return render(request, "LibCatalogo/cargaexito.html", {"mensaje":"Libro creado de forma exitosa!"})       
     else:
         l_formulario=LibrosForm()
         return render(request, "LibCatalogo/libros_f.html", {"l_formulario":l_formulario})
@@ -54,7 +54,7 @@ def autores_f(request):
             fecha_d=nuevo_autor_data["fecha_d"]
             nuevo_autor=Autores(nombre=nombre, apellido=apellido, fecha_n=fecha_n, fecha_d=fecha_d)
             nuevo_autor.save()
-            return render(request, "LibCatalogo/inicio.html")       
+            return render(request, "LibCatalogo/cargaexito.html", {"mensaje":"Autor creado de forma exitosa!"})       
     else:
         a_formulario=AutoresForm()
         return render(request, "LibCatalogo/autores_f.html", {"a_formulario":a_formulario})
@@ -67,7 +67,7 @@ def generos_f(request):
             nombre_g=nuevo_genero_data["nombre_g"]
             nuevo_genero=Genero(nombre_g=nombre_g)
             nuevo_genero.save()
-            return render(request, "LibCatalogo/inicio.html")       
+            return render(request, "LibCatalogo/cargaexito.html", {"mensaje":"Genero creado de forma exitosa!"})       
     else:
         g_formulario=GeneroForm()
         return render(request, "LibCatalogo/generos_f.html", {"g_formulario":g_formulario})

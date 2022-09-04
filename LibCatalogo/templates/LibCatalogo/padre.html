@@ -46,6 +46,9 @@
                 <a class="btn btn-lg btn-success" href="{% url 'libros'%}">Libros</a>
                 <a class="btn btn-lg btn-light" href="{% url 'autores'%}">Autores</a>
                 <a class="btn btn-lg btn-light" href="{% url 'generos'%}">Generos</a>
+                {% block exito %}
+                
+                {% endblock %}
             </div>
         </header>
         <!-- About section-->
