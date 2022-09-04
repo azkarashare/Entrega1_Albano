@@ -9,7 +9,7 @@ class Libros(models.Model):
     titulo=models.CharField(max_length=50)
     genero=models.CharField(max_length=30)
     autor=models.CharField(max_length=50)
-    sumario=models.TextField(max_length=120)
+    sumario=models.TextField(max_length=250)
     idioma=models.CharField(max_length=50)
 
     def __str__(self):

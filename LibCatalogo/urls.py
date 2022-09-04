@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-from LibCatalogo.views import autores, generos, inicio, libros, usuario
+from LibCatalogo.views import *
 
 
 urlpatterns = [
@@ -23,4 +23,7 @@ urlpatterns = [
     path('generos', generos, name='generos'),
     path('usuarios', usuario, name='usuarios'),
     path('inicio', inicio, name='inicio'),
+    path('librosf', libros_f, name='librosf'),
+    path('autoresf', autores_f, name='autoresf'),
+    path('generosf', generos_f, name='generosf'),
 ]

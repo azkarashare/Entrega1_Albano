@@ -10,6 +10,10 @@
 {% block contenido1 %}
 <h2>Que vamos a encontar en la seccion Libros?</h2>
 <p class="lead">En esta seccion encontraremos todos los libros que se encuentran disponibles en la Lib!</p>
+<div class="container px-4 text-center">
+    <a class="btn btn-lg btn-warning" href="{% url 'librosf'%}">Cargas</a>
+    <a class="btn btn-lg btn-light" href="{% url 'librosf'%}">Busquedas</a>
+</div>
 <ul>
     <li>Registrate para acceder a importantes beneficios!</li>
     <li>Podes realizar busquedas por titulo/autores/genero</li>
