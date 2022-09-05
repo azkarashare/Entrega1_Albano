@@ -71,3 +71,21 @@ def generos_f(request):
     else:
         g_formulario=GeneroForm()
         return render(request, "LibCatalogo/generos_f.html", {"g_formulario":g_formulario})
+
+#-----VISTA PARA FORMULARIOS DE BUSQUEDA-----
+
+#Esta es la del formulario de busqueda
+def f_busqueda_lib_by_title(request):
+    return render(request, "LibCatalogo/busquedas/busq_lib_by_title.html")
+
+#Esta es la que me muestra los resultados
+def f_resultado_lib_by_title(request):
+    lib_by_title_v=request.POST["lib_by_title"]
+    #Traer de la base todas las ocurrencias que coincidan con la busqueda 
+    #__icontains es para busquedas aproximadas
+    titulo_libro_v=Libros.objects.filter(titulo__icontains=lib_by_title_v)
+    return render(request, "LibCatalogo/busquedas/resultado_busq_lib_by_title.html", {"titulo_libro_k":titulo_libro_v})
+    
+
+
+

@@ -18,12 +18,16 @@ from LibCatalogo.views import *
 
 
 urlpatterns = [
-    path('libros', libros, name='libros'),
-    path('autores', autores, name='autores'),
-    path('generos', generos, name='generos'),
-    path('usuarios', usuario, name='usuarios'),
-    path('inicio', inicio, name='inicio'),
-    path('librosf', libros_f, name='librosf'),
-    path('autoresf', autores_f, name='autoresf'),
-    path('generosf', generos_f, name='generosf'),
+    path('libros/', libros, name='libros'),
+    path('autores/', autores, name='autores'),
+    path('generos/', generos, name='generos'),
+    path('usuarios/', usuario, name='usuarios'),
+    path('', inicio, name='inicio'),
+    #path('inicio/', inicio, name='inicio'),
+    path('librosf/', libros_f, name='librosf'),
+    path('autoresf/', autores_f, name='autoresf'),
+    path('generosf/', generos_f, name='generosf'),
+    #Urls de busquedas
+    path('buscar_l_by_t/', f_busqueda_lib_by_title, name='buscar_l_by_t'),
+    path('result_l_by_t/', f_resultado_lib_by_title, name='result_l_by_t'),
 ]
