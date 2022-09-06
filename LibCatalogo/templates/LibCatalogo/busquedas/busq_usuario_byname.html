@@ -12,21 +12,21 @@
 
 <ul>
     
-        <li><label><span class="label-body">Nombre</span><input type="radio" name="usuario_byname" onclick='go_buscar_u_por_nombre()'></label></li> 
+        <li><label><span class="label-body">Nombre </span><input type="radio" name="usuario_byname" onclick='go_buscar_u_por_nombre()'></label></li> 
         <script>
             function go_buscar_u_por_nombre() {
                  window.location = "{% url 'buscar_u_by_n' %}";
             }
        </script>
 
-        <li><label><span class="label-body">Apellido</span><input type="radio" name="usuario_bysurename" onclick='go_buscar_u_por_apellido()'></label></li>
+        <li><label><span class="label-body">Apellido </span><input type="radio" name="usuario_bysurename" onclick='go_buscar_u_por_apellido()'></label></li>
         <script>
             function go_buscar_u_por_apellido() {
                  window.location = "{% url 'buscar_u_by_s' %}";
             }
        </script>
 
-        <li><label><span class="label-body">Alias</span><input type="radio" name="usuario_byalias" onclick='go_buscar_u_por_alias()'></label></li>
+        <li><label><span class="label-body">Alias </span><input type="radio" name="usuario_byalias" onclick='go_buscar_u_por_alias()'></label></li>
         <script>
             function go_buscar_u_por_alias() {
                  window.location = "{% url 'buscar_u_by_a' %}"; 
