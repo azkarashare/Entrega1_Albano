@@ -15,24 +15,21 @@
     <li><label><span class="label-body">Titulo</span><input type="radio" name="lib_by_title" onclick='go_buscar_por_titulo()'></label></li> 
     <script>
         function go_buscar_por_titulo() {
-             //window.open('buscar_l_by_t'); //if you want to open in new window
-             window.location = "{% url 'buscar_l_by_t' %}"; //if you want to redirect
+             window.location = "{% url 'buscar_l_by_t' %}";
         }
    </script>
 
     <li><label><span class="label-body">Genero</span><input type="radio" name="lib_by_genero" onclick='go_buscar_por_genero()'></label></li>
     <script>
         function go_buscar_por_genero() {
-             //window.open('buscar_l_by_t'); //if you want to open in new window
-             window.location = "{% url 'buscar_l_by_g' %}"; //if you want to redirect
+             window.location = "{% url 'buscar_l_by_g' %}";
         }
    </script>
 
     <li><label><span class="label-body">Autor</span><input type="radio" name="lib_by_autor" onclick='go_buscar_por_autor()'></label></li>
     <script>
         function go_buscar_por_autor() {
-             //window.open('buscar_l_by_t'); //if you want to open in new window
-             window.location = "{% url 'buscar_l_by_a' %}"; //if you want to redirect
+             window.location = "{% url 'buscar_l_by_a' %}";
         }
    </script>
 
