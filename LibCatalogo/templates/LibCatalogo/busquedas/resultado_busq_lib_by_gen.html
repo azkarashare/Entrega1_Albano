@@ -13,9 +13,9 @@
 {% if titulo_libro_k %}
 <ul>
     {% for genero_s in titulo_libro_k %}
-        <li>{{ genero_s.titulo }}</li>
-        <li>{{ genero_s.autor }}</li>
-        <li>{{ genero_s.genero }}</li>
+        <li>Titulo: {{ genero_s.titulo }}</li>
+        <li>Autor: {{ genero_s.autor }}</li>
+        <li>Genero: {{ genero_s.genero }}</li>
         <br>
     {% endfor %}
 </ul>
