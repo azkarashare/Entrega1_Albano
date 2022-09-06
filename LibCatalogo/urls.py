@@ -34,4 +34,14 @@ urlpatterns = [
     path('result_l_by_t/', f_resultado_lib_by_title, name='result_l_by_t'),
     path('result_l_by_g/', f_resultado_lib_by_gen, name='result_l_by_g'),
     path('result_l_by_a/', f_resultado_lib_by_autor, name='result_l_by_a'),
+
+    path('usuarios_f/', usuarios_f, name='usuariosf'),
+    #Urls de busqueda de usuarios
+    path('buscar_u_by_n/', f_busqueda_usuario_byname, name='buscar_u_by_n'),
+    path('buscar_u_by_s/', f_busqueda_usuario_bysurename, name='buscar_u_by_s'),
+    path('buscar_u_by_a/', f_busqueda_usuario_byalias, name='buscar_u_by_a'),
+
+    path('result_u_by_n/', f_resultado_usuario_byname, name='result_u_by_n'),
+    path('result_u_by_s/', f_resultado_usuario_bysurename, name='result_u_by_s'),
+    path('result_u_by_a/', f_resultado_usuario_byalias, name='result_u_by_a'),
 ]

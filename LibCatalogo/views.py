@@ -72,6 +72,25 @@ def generos_f(request):
         g_formulario=GeneroForm()
         return render(request, "LibCatalogo/generos_f.html", {"g_formulario":g_formulario})
 
+#Vista para carga de usuarios
+def usuarios_f(request):
+    if request.method=="POST":
+        form_u=UsuariosForm(request.POST)
+        if form_u.is_valid():
+            nuevo_usuario_data=form_u.cleaned_data
+            nombre_u=nuevo_usuario_data["nombre"]
+            apellido_u=nuevo_usuario_data["apellido"]
+            fecha_n_u=nuevo_usuario_data["fecha_n"]
+            alias_u=nuevo_usuario_data["alias"]
+            correo_u=nuevo_usuario_data["correo"]
+            clave_u=nuevo_usuario_data["contrasenia"]
+            nuevo_usuario=Usuarios(nombre=nombre_u, apellido=apellido_u, fecha_n=fecha_n_u, alias=alias_u, correo=correo_u, contrasenia=clave_u)
+            nuevo_usuario.save()
+            return render(request, "LibCatalogo/cargaexito.html", {"mensaje":"Usuario creado de forma exitosa!"})       
+    else:
+        u_formulario=UsuariosForm()
+        return render(request, "LibCatalogo/usuarios_f.html", {"u_formulario":u_formulario})
+
 #-----VISTA PARA FORMULARIOS DE BUSQUEDA-----
 
 #Esta es la del formulario de busqueda
@@ -107,6 +126,42 @@ def f_resultado_lib_by_autor(request):
     #__icontains es para busquedas aproximadas
     titulo_libro_v=Libros.objects.filter(autor__icontains=lib_by_autor_v)
     return render(request, "LibCatalogo/busquedas/resultado_busq_lib_by_autor.html", {"titulo_libro_k":titulo_libro_v})
+
+
+#Vistas para busqueda de usuarios
+def f_busqueda_usuario_byname(request):
+    return render(request, "LibCatalogo/busquedas/busq_usuario_byname.html")
+
+def f_busqueda_usuario_bysurename(request):
+    return render(request, "LibCatalogo/busquedas/busq_usuario_bysurename.html")
+
+def f_busqueda_usuario_byalias(request):
+    return render(request, "LibCatalogo/busquedas/busq_usuario_byalias.html")
+
+def f_resultado_usuario_byname(request):
+    usuario_byname_v=request.POST["usuario_byname"]
+    #Traer de la base todas las ocurrencias que coincidan con la busqueda 
+    #__icontains es para busquedas aproximadas
+    usuario_v=Usuarios.objects.filter(nombre__icontains=usuario_byname_v)
+    return render(request, "LibCatalogo/busquedas/resultado_usuario_byname.html", {"usuario_k":usuario_v})
+
+def f_resultado_usuario_bysurename(request):
+    usuario_bysurename_v=request.POST["usuario_bysurename"]
+    #Traer de la base todas las ocurrencias que coincidan con la busqueda 
+    #__icontains es para busquedas aproximadas
+    usuario_a_v=Usuarios.objects.filter(apellido__icontains=usuario_bysurename_v)
+    return render(request, "LibCatalogo/busquedas/resultado_usuario_bysurename.html", {"usuario_a_k":usuario_a_v})
+
+def f_resultado_usuario_byalias(request):
+    usuario_byalias_v=request.POST["usuario_byalias"]
+    #Traer de la base todas las ocurrencias que coincidan con la busqueda 
+    #__icontains es para busquedas aproximadas
+    usuario_alias_v=Usuarios.objects.filter(alias__icontains=usuario_byalias_v)
+    return render(request, "LibCatalogo/busquedas/resultado_usuario_byalias.html", {"usuario_alias_k":usuario_alias_v})
+
+
+
+
     
 
 

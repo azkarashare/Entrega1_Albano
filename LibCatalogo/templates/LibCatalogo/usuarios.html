@@ -10,6 +10,10 @@
 {% block contenido1 %}
 <h2>Que vamos a encontar en la seccion Usuarios?</h2>
 <p class="lead">En esta seccion podras subscribirte y registrarte en la Lib!</p>
+<div class="container px-4 text-center">
+    <a class="btn btn-lg btn-danger" href="{% url 'usuariosf'%}">Registro</a>
+    <a class="btn btn-lg btn-light" href="{% url 'buscar_u_by_n'%}">Busqueda</a>
+</div>
 <ul>
     <li>Registrate para acceder a importantes beneficios!</li>
     <li>Podes realizar busquedas por titulo/autores/genero</li>

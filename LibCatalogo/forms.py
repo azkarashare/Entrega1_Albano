@@ -20,3 +20,11 @@ class AutoresForm(forms.Form):
 
 class GeneroForm(forms.Form):
     nombre_g = forms.CharField(max_length=50)
+
+class UsuariosForm(forms.Form):
+    nombre = forms.CharField(max_length=50)
+    apellido = forms.CharField(max_length=50)
+    fecha_n = forms.DateField()
+    alias = forms.CharField(max_length=50)
+    correo= forms.EmailField()
+    contrasenia = forms.CharField(label="Password", widget=forms.PasswordInput, strip=False, max_length=50)
