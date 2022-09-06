@@ -106,7 +106,7 @@ def f_resultado_lib_by_autor(request):
     #Traer de la base todas las ocurrencias que coincidan con la busqueda 
     #__icontains es para busquedas aproximadas
     titulo_libro_v=Libros.objects.filter(autor__icontains=lib_by_autor_v)
-    return render(request, "LibCatalogo/busquedas/resultado_busq_lib_by_title.html", {"titulo_libro_k":titulo_libro_v})
+    return render(request, "LibCatalogo/busquedas/resultado_busq_lib_by_autor.html", {"titulo_libro_k":titulo_libro_v})
     
 
 
