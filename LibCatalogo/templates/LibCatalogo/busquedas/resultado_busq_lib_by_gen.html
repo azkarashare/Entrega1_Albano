@@ -10,12 +10,12 @@
 {% block contenido1 %}
 <h2>TITULOS ENCONTRADOS</h2>
 
-{% if titulo_libro_k %}
+{% if gen_libro_k %}
 <ul>
-    {% for genero_s in titulo_libro_k %}
+    {% for genero_s in gen_libro_k %}
         <li>Titulo: {{ genero_s.titulo }}</li>
-        {# <li>Autor: {{ genero_s.autor }}</li> #}
-        {# <li>Genero: {{ genero_s.genero }}</li> #}
+        <li>Autor: {{ genero_s.autor }}</li>
+        <li>Genero: {{ genero_s.genero }}</li>
         <br>
     {% endfor %}
 </ul>
