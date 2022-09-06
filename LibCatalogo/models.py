@@ -19,7 +19,8 @@ class Autores(models.Model):
     nombre=models.CharField(max_length=50)
     apellido=models.CharField(max_length=50)
     fecha_n=models.DateField(null=True, blank=True)
-    fecha_d=models.DateField('Fallecido', null=True, blank=True)
+    #fecha_d=models.DateField('Fallecido', null=True, blank=True)
+    fecha_d=models.DateField(null=True, blank=True)
 
     def __str__(self):
         return self.nombre+" "+self.apellido

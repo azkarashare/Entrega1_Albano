@@ -1,5 +1,4 @@
 from django.shortcuts import render
-
 from .forms import *
 from .models import *
 from django.http import HttpResponse
@@ -93,7 +92,7 @@ def usuarios_f(request):
 
 #-----VISTA PARA FORMULARIOS DE BUSQUEDA-----
 
-#Esta es la del formulario de busqueda
+#Vistas de formularios de busqueda de libros
 def f_busqueda_lib_by_title(request):
     return render(request, "LibCatalogo/busquedas/busq_lib_by_title.html")
 
@@ -127,6 +126,52 @@ def f_resultado_lib_by_autor(request):
     titulo_libro_v=Libros.objects.filter(autor__icontains=lib_by_autor_v)
     return render(request, "LibCatalogo/busquedas/resultado_busq_lib_by_autor.html", {"titulo_libro_k":titulo_libro_v})
 
+#--------------------------------------------------------------------
+#Vistas de formularios de busqueda de autores
+def f_busqueda_autor_by_nombre(request):
+    return render(request, "LibCatalogo/busquedas/busq_autor_by_name.html")
+
+def f_busqueda_autor_by_apellido(request):
+    return render(request, "LibCatalogo/busquedas/busq_autor_by_apellido.html")
+
+def f_busqueda_autor_by_fecha_n(request):
+    return render(request, "LibCatalogo/busquedas/busq_autor_by_fechan.html")
+
+#Vistas de resultados de busquedas de autores
+def f_resultado_autor_by_nombre(request):
+    autor_by_name_v=request.POST["autor_by_name"]
+    #Traer de la base todas las ocurrencias que coincidan con la busqueda 
+    #__icontains es para busquedas aproximadas
+    autor_name_v=Autores.objects.filter(nombre__icontains=autor_by_name_v)
+    return render(request, "LibCatalogo/busquedas/resultado_busq_autor_by_name.html", {"autor_name_k":autor_name_v})
+
+def f_resultado_autor_by_apellido(request):
+    autor_by_apellido_v=request.POST["autor_by_apellido"]
+    #Traer de la base todas las ocurrencias que coincidan con la busqueda 
+    #__icontains es para busquedas aproximadas
+    autor_apellido_v=Autores.objects.filter(apellido__icontains=autor_by_apellido_v)
+    return render(request, "LibCatalogo/busquedas/resultado_busq_autor_by_apellido.html", {"autor_apellido_k":autor_apellido_v})
+
+def f_resultado_autor_by_fecha_n(request):
+    autor_by_fn_v=request.POST["autor_by_fn"]
+    #Traer de la base todas las ocurrencias que coincidan con la busqueda 
+    #__icontains es para busquedas aproximadas
+    autor_fn_v=Autores.objects.filter(fecha_n__icontains=autor_by_fn_v)
+    return render(request, "LibCatalogo/busquedas/resultado_busq_autor_by_fechan.html", {"autor_fn_k":autor_fn_v})
+
+#--------------------------------------------------------------------
+#Vistas para busqueda de generos
+def f_busqueda_generos(request):
+    return render(request, "LibCatalogo/busquedas/busq_generos.html")
+
+def f_resultado_generos(request):
+    #b_generos_v=request.POST['']
+    #Traer de la base todas las ocurrencias que coincidan con la busqueda 
+    #__icontains es para busquedas aproximadas
+    generos_v=Genero.objects.all()
+    return render(request, "LibCatalogo/busquedas/resultado_busq_generos.html", {"generos_k":generos_v})
+
+#--------------------------------------------------------------------
 
 #Vistas para busqueda de usuarios
 def f_busqueda_usuario_byname(request):

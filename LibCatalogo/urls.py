@@ -27,13 +27,27 @@ urlpatterns = [
     path('librosf/', libros_f, name='librosf'),
     path('autoresf/', autores_f, name='autoresf'),
     path('generosf/', generos_f, name='generosf'),
-    #Urls de busquedas
+    #Urls de busquedas de libros
     path('buscar_l_by_t/', f_busqueda_lib_by_title, name='buscar_l_by_t'),
     path('buscar_l_by_g/', f_busqueda_lib_by_gen, name='buscar_l_by_g'),
     path('buscar_l_by_a/', f_busqueda_lib_by_autor, name='buscar_l_by_a'),
     path('result_l_by_t/', f_resultado_lib_by_title, name='result_l_by_t'),
     path('result_l_by_g/', f_resultado_lib_by_gen, name='result_l_by_g'),
     path('result_l_by_a/', f_resultado_lib_by_autor, name='result_l_by_a'),
+
+    #Urls de busqueda de autores
+    path('buscar_a_by_n/', f_busqueda_autor_by_nombre, name='buscar_a_by_n'),
+    path('buscar_a_by_a/', f_busqueda_autor_by_apellido, name='buscar_a_by_a'),
+    path('buscar_a_by_fn/', f_busqueda_autor_by_fecha_n, name='buscar_a_by_fn'),
+    path('result_a_by_n/', f_resultado_autor_by_nombre, name='result_a_by_n'),
+    path('result_a_by_a/', f_resultado_autor_by_apellido, name='result_a_by_a'),
+    path('result_a_by_fn/', f_resultado_autor_by_fecha_n, name='result_a_by_fn'),
+
+    #Urls de busqueda de generos
+    path('buscar_g/', f_busqueda_generos, name='buscar_g'),
+    path('result_g/', f_resultado_generos, name='result_g'),
+
+
 
     path('usuarios_f/', usuarios_f, name='usuariosf'),
     #Urls de busqueda de usuarios
