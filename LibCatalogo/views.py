@@ -78,12 +78,34 @@ def generos_f(request):
 def f_busqueda_lib_by_title(request):
     return render(request, "LibCatalogo/busquedas/busq_lib_by_title.html")
 
-#Esta es la que me muestra los resultados
+def f_busqueda_lib_by_gen(request):
+    return render(request, "LibCatalogo/busquedas/busq_lib_by_genero.html")
+
+def f_busqueda_lib_by_autor(request):
+    return render(request, "LibCatalogo/busquedas/busq_lib_by_autor.html")
+
+#Esta es la que me muestra los resultados de titulos buscando por titulo
 def f_resultado_lib_by_title(request):
     lib_by_title_v=request.POST["lib_by_title"]
     #Traer de la base todas las ocurrencias que coincidan con la busqueda 
     #__icontains es para busquedas aproximadas
     titulo_libro_v=Libros.objects.filter(titulo__icontains=lib_by_title_v)
+    return render(request, "LibCatalogo/busquedas/resultado_busq_lib_by_title.html", {"titulo_libro_k":titulo_libro_v})
+
+#Esta es la que me muestra los resultados de titulos buscando por genero
+def f_resultado_lib_by_gen(request):
+    lib_by_gen_v=request.POST["lib_by_genero"]
+    #Traer de la base todas las ocurrencias que coincidan con la busqueda 
+    #__icontains es para busquedas aproximadas
+    titulo_libro_v=Libros.objects.filter(genero__icontains=lib_by_gen_v)
+    return render(request, "LibCatalogo/busquedas/resultado_busq_lib_by_gen.html", {"titulo_libro_k":titulo_libro_v})
+
+#Esta es la que me muestra los resultados de titulos buscando por autor
+def f_resultado_lib_by_autor(request):
+    lib_by_autor_v=request.POST["lib_by_autor"]
+    #Traer de la base todas las ocurrencias que coincidan con la busqueda 
+    #__icontains es para busquedas aproximadas
+    titulo_libro_v=Libros.objects.filter(autor__icontains=lib_by_autor_v)
     return render(request, "LibCatalogo/busquedas/resultado_busq_lib_by_title.html", {"titulo_libro_k":titulo_libro_v})
     
 

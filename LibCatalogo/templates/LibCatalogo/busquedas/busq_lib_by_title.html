@@ -8,10 +8,39 @@
 {% endblock %}
 
 {% block contenido1 %}
-<h2>Formulario de busqueda de libros por titulo</h2>
+<h2>Formulario de busqueda de libros por titulo/genero/autor</h2>
+
+<ul>
+    
+        <li><label><span class="label-body">Titulo</span><input type="radio" name="lib_by_title" onclick='go_buscar_por_titulo()'></label></li> 
+        <script>
+            function go_buscar_por_titulo() {
+                 //window.open('buscar_l_by_t'); //if you want to open in new window
+                 window.location = "{% url 'buscar_l_by_t' %}"; //if you want to redirect
+            }
+       </script>
+
+        <li><label><span class="label-body">Genero</span><input type="radio" name="lib_by_genero" onclick='go_buscar_por_genero()'></label></li>
+        <script>
+            function go_buscar_por_genero() {
+                 //window.open('buscar_l_by_t'); //if you want to open in new window
+                 window.location = "{% url 'buscar_l_by_g' %}"; //if you want to redirect
+            }
+       </script>
+
+        <li><label><span class="label-body">Autor</span><input type="radio" name="lib_by_autor" onclick='go_buscar_por_autor()'></label></li>
+        <script>
+            function go_buscar_por_autor() {
+                 //window.open('buscar_l_by_t'); //if you want to open in new window
+                 window.location = "{% url 'buscar_l_by_a' %}"; //if you want to redirect
+            }
+       </script>
+    
+</ul>
+
 <p class="lead">Carga los datos solicitados para realizar una busqueda de libro por titulo</p>
 <form action="{% url 'result_l_by_t' %}" method="POST"> {% csrf_token %}
-    <input type="text" name="lib_by_title">
+    <input type="text" name="lib_by_title" placeholder="Titulo">
     <input type="submit" value="Buscar">
 </form>
 {% endblock %}

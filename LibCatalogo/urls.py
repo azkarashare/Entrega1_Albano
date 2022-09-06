@@ -29,5 +29,9 @@ urlpatterns = [
     path('generosf/', generos_f, name='generosf'),
     #Urls de busquedas
     path('buscar_l_by_t/', f_busqueda_lib_by_title, name='buscar_l_by_t'),
+    path('buscar_l_by_g/', f_busqueda_lib_by_gen, name='buscar_l_by_g'),
+    path('buscar_l_by_a/', f_busqueda_lib_by_autor, name='buscar_l_by_a'),
     path('result_l_by_t/', f_resultado_lib_by_title, name='result_l_by_t'),
+    path('result_l_by_g/', f_resultado_lib_by_gen, name='result_l_by_g'),
+    path('result_l_by_a/', f_resultado_lib_by_autor, name='result_l_by_a'),
 ]
